@@ -6,8 +6,8 @@
     
 # There are 14 data types in python which are as follows:
 # There are two types of datatypes user defined datatypes and built-in datatypes.
-'''User defined datatypes are those which are created by the user,
-   while built-in datatypes are those which are provided by python.'''
+'''1- User defined datatypes are those which are created by the user,
+   2- while built-in datatypes are those which are provided by python.'''
    
 #    There are also further two types of datatypes mutable and immutable.
 '''mutable means that the value of the variable can be changed after creation,
@@ -33,6 +33,7 @@ while immutable means that the value of the variable cannot be changed after cre
    There are two types of type conversion in python: implicit type conversion and explicit type conversion.'''
    
 #    implicit type conversion
+
 # 1. Numaric datatypes: int, float, complex 
 
 
@@ -41,6 +42,7 @@ float_b = 10.5 # float
 complex_c = 3 + 4j # complex
 
 int_plus_float = int_a + float_b #float
+print("Integer + float value: ",int_plus_float,"datatype",type(int_plus_float))
 int_complex = int_a + complex_c  #complex
 float_plus_int = float_b + int_a #float
 complex_plus_float = complex_c + float_b # complex
@@ -50,7 +52,7 @@ print("Integer value",int_a,"datatype",type(int_a))
 print("float value",float_b, "datatype",type(float_b))
 print("complex value",complex_c,"datatype",type(complex_c))
 print("----------------------------------------------------")
-print("Integer + float value",int_plus_float,"datatype",type(int_plus_float))
+print("Integer + float value: ",int_plus_float,"datatype",type(int_plus_float))
 print("Integer + complex value",int_complex,"datatype",type(int_complex))
 print("float + Integer value",float_plus_int,"datatype",type(float_plus_int))
 print("complex + float value",complex_plus_float,"datatype",type(complex_plus_float))
@@ -76,7 +78,7 @@ print("----------------------------------------------------")
 print("Integer to float value: ",int_to_float, "datatype: ", type(int_to_float))
 print("Interger to complex: ",int_to_complex, "datatpe: ",type(int_to_complex))
 
-print("Flot to interger value: ",flot_casting, "datadype: ",type(float_to_int))
+print("Flot to interger value: ",float_to_int, "datadype: ",type(float_to_int))
 print("Flot to complex: ",flot_to_complex, "datatype: ",type(flot_to_complex))
 
 print("Complex to integer value: ",complex_to_int,"datatype: ",type(complex_to_int))
@@ -86,7 +88,7 @@ print("\n==========================bool========================")
 
 #   2. Boolean datatype: bool
 
-boolen_a_true = True
+boolen_a_true = True # 1
 print("when True refer in a variable: ",boolen_a_true, "datatype: ", type(boolen_a_true))
 
 boolen_a_true = boolen_a_true + 2

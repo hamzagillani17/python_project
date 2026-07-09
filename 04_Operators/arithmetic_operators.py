@@ -32,8 +32,9 @@ add_integer_ver = int_a + int_b
 sub_int_ver = int_a - int_b
 div_ver = int_a / int_b
 mul_ver = int_a * int_b 
-mod_ver = int_a % int_b
-exp_ver = int_a ** int_b
+mod_ver = int_a % int_b  #Modules
+exp_ver = int_a ** int_b #Exponents
+floor_div = int_a // int_b
 
 add_complx_integer = int_a + complx_a
 add_complx_float = complx_a + float_a
@@ -42,11 +43,15 @@ sub_integer_complx = int_a - complx_a
 print("a plus b = ",add_integer_ver)
 print("a subtraction b = ", sub_int_ver)
 print("a divide b = ",div_ver)
+print("a floor division into b: ", floor_div)
 print("a multiply b = ",mul_ver)
 print(" a moduls b = ", mod_ver)
 print("a Exponents b ", exp_ver)
+
+
 print("a add complx = ",add_complx_integer, type(add_complx_integer))
-print("a add")
+print("add complx value in float: ",add_complx_float, "datatype: ",type(add_complx_float))
+print("Subtraction int in complx: ",sub_integer_complx)
 
 print("\n")
 # Using format () method
@@ -56,6 +61,25 @@ print("a: {} b: {} a / b = {}".format(int_a,int_b,div_ver))
 print("a: {} b: {} a * b = {}".format(int_a,int_b,mul_ver))
 print("a: {} b: {} a % b = {} ".format(int_a,int_b,mod_ver))
 print("a: {} b:{} a**b = {}".format(int_a,int_b,exp_ver))
+
+# Working on Modules 
+
+mod_a = 61
+mod_b = 5
+mod_value = mod_a % mod_b
+print(mod_value,30%40)
+
+print("{} % {} = {} ".format(8,2,8%2))
+print("{} % {} = {} ".format(59,2,59%2))
+print(10.1%3.1)
+print(3%10)
+
+print("\n -----Floor division----")
+# floor division
+
+print("Floor division: ", 50//3)
+print(3//50)
+
 
 
 
