@@ -73,3 +73,9 @@ print(not (0 or []))                       #True
 print(not (10 and "" or 50))               #False
 print(5 and 8 and 0 and 10)                #0
 
+
+x = 10
+y = 20
+print("x%2 == 0 and y%2 == 0:",x%2 == 0 and y%2 == 0) #True
+print ("not (x+y>15):", not (x+y)>15)                 #False
+
