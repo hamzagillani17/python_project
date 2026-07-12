@@ -69,3 +69,4 @@ x = [[100], [200]]
 y = [[100], [200]]
 
 print(id(x[0][0]) == id(y[0][0]))   # 100 chota integer nahi hai (256 se zyada)... predict karein!
+
