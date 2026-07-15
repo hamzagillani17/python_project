@@ -21,16 +21,17 @@ if area.is_integer():
 else:
    print("Area of Rectengal",area)   
 
-# day
-day = int(input("Enter Day Number (1-7): "))
 
-if day == 1:
+
+# day
+day = float(input("Enter Day Number (1-7): "))
+
+if day == 1 and day.is_integer():
     print("Monday")
-    if 
 
 elif day == 2:
-    print("Tuesday")
-
+        print("Tuesday")
+    
 elif day == 3:
     print("Wednesday")
 
@@ -47,4 +48,44 @@ elif day == 7:
     print("Sunday")
 
 else:
-    print("Invalid Day")    
+    print("Invalid Day")
+
+
+#p0sitiv negitivee
+
+number = int(input("Enter a number: "))
+
+if number > 0 and number % 2 == 0:
+    print("Positive Even")
+
+elif number > 0:
+    print("Positive Odd")
+
+elif number < -100:
+    print("Bohat Chota Negative")
+
+elif number < 0:
+    print("Normal Negative")
+
+else:
+    print("Zero")
+
+
+#
+number = float(input("Enter a number: "))
+
+if not(number.is_integer()):
+    print("Number is Invalid")
+elif number == 0:
+    print("Number is Zero")    
+elif number % 2 == 0 and number > 0: 
+    print("Positive Even")
+elif number % 2 ==1 and number > 0:
+    print("Number Odd")
+elif number < 0 :
+    if number < -100:                    # Inner if - sirf tab check hoga jab number negative ho
+        print("Bohat Chota Negative")
+    else:
+        print("Normal Negative")
+else:
+    print("Zero")    
