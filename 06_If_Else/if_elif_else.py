@@ -71,7 +71,7 @@ else:
     print("Zero")
 
 
-#
+# using elif
 number = float(input("Enter a number: "))
 
 if not(number.is_integer()):
@@ -83,9 +83,27 @@ elif number % 2 == 0 and number > 0:
 elif number % 2 ==1 and number > 0:
     print("Number Odd")
 elif number < 0 :
-    if number < -100:                    # Inner if - sirf tab check hoga jab number negative ho
+    if number < -100:                   
         print("Bohat Chota Negative")
     else:
         print("Normal Negative")
 else:
     print("Zero")    
+
+
+#usling if nested
+
+number1  = float(input("Enter a number"))
+
+if not(number1.is_integer()):
+    print("invalid number")
+else:
+     if number1 == 0 :
+        print("Number is zero")
+     elif number1 > 0 and number1 % 2==0:
+        print("Number is even")
+     elif number1 > 0:
+         print("number is odd")    
+     else:
+        print("odd number")                
+  
