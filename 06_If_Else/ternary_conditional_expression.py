@@ -16,3 +16,7 @@ number1 = int(input("Enter a number: "))
 result1 = "Even" if number1 % 2 == 0 else "Odd"
 print(result1)
 
+marks = int(input("Enter your marks: "))
+grade = "A" if marks >= 90 else "B" if marks >= 75 else "C" if marks >= 60 else "Fail" 
+print(grade)
+
