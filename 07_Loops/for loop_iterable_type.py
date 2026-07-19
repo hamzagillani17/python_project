@@ -4,7 +4,7 @@ print("=======iterable type in for loop=======")
 An iterable object implements the __iter__() method, which returns an iterator object. The iterator object implements the __next__() method, which returns the next item in the sequence. When there are no more items to return, it raises a StopIteration exception.
 '''
 #List
-print("\n-----List-----")
+print("\n===============List==============")
 fruits = ["Mango", "Orange","Apple","Graps"]
 for fruit in fruits :
      print(fruit,"  Fruits ID",id(fruits))   # prints each element of the list one by one
@@ -67,7 +67,7 @@ number_rev = [0,1,2,3,4,5,6]
 reversed_list = []   # empty list to build the reversed version
 for rev in number_rev:
      reversed_list.insert(0,rev) # insert each new number at the FRONT (position 0)
-print(reversed_list)
+print(reversed_list) # 
 
 print("\n------Find First & Second Largest Number------")
 
@@ -137,4 +137,213 @@ for num in numbers:
     else:
         seen.append(num)           # if not, add it to our "seen" list
 
+print("------Search an Item---------")        
+
 print("Has duplicates?", has_duplicate)
+names = ["Ali", "Sara", "Ahmed", "John"]
+search = "Sara"
+found = False
+for name in names:
+    if name == search:
+        found = True
+        break
+
+print(found)
+
+
+
+
+
+
+
+print("\n===================String==================")
+
+str_ver = "ich bin Ali"
+for i in str_ver:
+    print(i, end='')
+
+print("\n-------Count Vowels in a String--------")
+
+str_text = "my name is ali, i live in lahore"
+vowels = "aeiou"
+count = 0
+found_vowels = []
+
+for letters in str_text:
+    if letters in vowels:
+        found_vowels.append(letters)
+        count += 1
+print(found_vowels, end=" ")
+print("\n",count, end="") 
+
+
+print("\n-------Count Digits--------")
+
+str_num_text = "my adress : alber 19, 123, mobile:23232122"
+count = 0
+num_found = ""
+
+for n in str_num_text:
+    if n.isdigit():
+     count+=1
+print("Text chr:",count)
+
+
+text = "Ali123Germany45"        # String contains letters and digits.
+count = 0                       # Variable to count digits.
+
+for ch in text:                 # Read one character at a time.
+    if ch.isdigit():            # Check if character is a digit.
+        count += 1              # Increase digit count.
+print("Digits:", count)         # Display total digits.   
+
+
+print("\n-------Count Numbers, Letters & Special Characters--------")
+
+str_num_text = "my adress : alber 19, 123, mobile:23232122"
+
+numbers_found = []   # poore numbers yahan store honge, jesy "19", "123"
+temp_num = ""         # chhota buffer — digits ko jodne ke liye
+
+alphabet_count = 0
+special_count = 0
+
+for ch in str_num_text:
+    if ch.isdigit():
+        temp_num += ch          # digit ko buffer mein jodo
+    else:
+        if temp_num != "":       # agar buffer mein kuch tha, matlab ek number khatam hua
+            numbers_found.append(temp_num)
+            temp_num = ""        # buffer khaali kardo agle number ke liye
+
+        if ch.isalpha():
+            alphabet_count += 1
+        elif ch != " ":
+            special_count += 1
+
+# loop khatam hone ke baad check karo — agar string number pe hi khatam hoti hai
+if temp_num != "":
+    numbers_found.append(temp_num)
+
+print("Numbers found:", numbers_found)
+print("Total numeric values:", len(numbers_found))
+print("Total alphabet characters:", alphabet_count)
+print("Total special characters:", special_count)
+
+print("\n-------Search Character--------")
+
+str_chr = "Automation"
+find_chr = "n"
+target = ""
+found = False
+
+for chr in str_chr:
+    if chr == find_chr:
+        target=chr
+        found = True
+        break
+if found:
+    print(f" {found} :",target)
+else:
+    print("chr is not found",found)
+
+
+print("\n-------Search Character--------")
+text = "hello world"
+char_to_find = "w"
+
+result = text.find(char_to_find)
+
+if result == -1:
+    print("Character not found")
+else:
+    print("Character found at index:", result)
+
+print("\n-------Uppercase Count--------")
+
+str_text_u = "Python is Really easily Language"
+count = 0
+find = []
+
+for chr in str_text_u:
+    if chr.isupper():
+        count += 1
+        find.append(chr)
+print(count)
+print(find)   
+
+print("\n-------Count Spaces--------")
+
+str_text = "Python is ver easy language"
+find = 0
+for space in str_text:
+   if space == " ":
+    find += 1
+print(find)    
+
+print("\n-------Reverse String--------")
+
+original_text = "der ist ein Hund"
+rev_str = " "
+
+for rev in original_text:
+    rev_str = rev + rev_str
+print("Original:" ,original_text)    
+print("Reverse Text: ",rev_str)
+
+print("\n-------Palindrome Check--------")
+
+p_str = "madam"
+rev_p = ""
+
+for rev in p_str:
+    rev_p = rev + rev_p
+
+if p_str == rev_p:
+     print(f"'{p_str}' is a palindrome")
+else:
+    print(f"'{rev_p}' is NOT a palindrome")
+
+print("\n-------Character Frequency--------")
+
+text = "banana"
+freq = {}   # empty dictionary — will hold each character's count
+
+for ch in text:
+    if ch in freq:
+        freq[ch] += 1      # character already seen before, so add 1 to its count
+    else:
+        freq[ch] = 1       # first time seeing this character, start count at 1
+
+print("Frequency:", freq)    
+
+
+print("\n-------Remove Spaces--------")
+
+sentence = "my name is ali"
+no_space = ""   # empty basket — will collect only non-space characters
+
+for ch in sentence:
+    if ch != " ":
+        no_space += ch    # only add character if it's NOT a space
+
+print("Original:", sentence)
+print("Without spaces:", no_space) 
+
+print("\n-------Count Words--------")
+
+sentence = "my name is ali"
+word_count = 0
+inside_word = False   # tracks whether we are currently inside a word
+
+for ch in sentence:
+    if ch != " " and inside_word == False:
+        # we just entered a new word (previous char was space or start of string)
+        word_count += 1
+        inside_word = True
+    elif ch == " ":
+        # we hit a space, meaning current word has ended
+        inside_word = False
+
+print("Sentence:", sentence)
+print("Total words:", word_count)
