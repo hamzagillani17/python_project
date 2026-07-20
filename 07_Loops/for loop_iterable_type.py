@@ -503,4 +503,6 @@ for name, marks in student_marks.items():
     inverted[marks] = name         # value becomes the new key, key becomes the new value
 
 print("Original:", student_marks)
-print("Inverted:", inverted)    
+print("Inverted:", inverted) 
+
+
