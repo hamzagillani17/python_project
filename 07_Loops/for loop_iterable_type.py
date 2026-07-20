@@ -347,3 +347,160 @@ for ch in sentence:
 
 print("Sentence:", sentence)
 print("Total words:", word_count)
+
+print("\n==========Dictionary=============")
+
+print("-------Dictionary Traversal--------")
+
+student_marks = {"ali": 85, "sara": 92, "ahmed": 78}
+print("key")
+for name in student_marks.keys():
+    print(name)
+# Loop through VALUES only
+print("Values:")
+for marks in student_marks.values():
+    print(marks)
+
+
+print("\n-------Student Marks (Dictionary)--------")
+marks = {"Ali": 85, "Sara": 90, "Ahmed": 70, "Zara": 95}
+total = 0
+
+for name, score in marks.items():   # dictionary se key(name) aur value(score) dono nikalo
+    print(name, "scored", score)
+    total += score
+
+average = total / len(marks)
+print("Average Marks:", average)
+
+print("-------Search a Key--------")
+student_inf = {"ali": 85, "sara": 92, "ahmed": 78}
+find_name = "ali"
+found = False
+
+for name in student_inf:
+    if name == find_name:
+        found = True
+        break 
+if found:
+    print(find_name,student_inf[find_name]) 
+else:
+    print("not found")
+
+print("-------Build Dictionary from List--------")
+
+fruits = ["apple", "banana", "apple", "orange", "banana", "apple"]
+fruit_count = {}
+
+for fruit in fruits:
+    if fruit in fruit_count:              # logical check: key already exists?
+        fruit_count[fruit] += 1           # yes -> increase count
+    else:
+        fruit_count[fruit] = 1            # no -> create new entry with count 1
+
+print("Fruit counts:", fruit_count) 
+
+print("\n-------Find Highest Scorer--------")
+
+student_marks = {"ali": 85, "sara": 92, "ahmed": 78}
+
+highest_name = ""
+highest_marks = float('-inf')     # start with smallest possible value
+
+lowest_name = ""
+lowest_marks = float('inf')     # start with smallest possible value
+
+
+for name, marks in student_marks.items():
+    if marks > highest_marks:
+        highest_marks = marks
+        highest_name = name
+
+    if marks < lowest_marks:
+        lowest_marks= marks
+        lowest_name = name     
+
+print(highest_name,highest_marks)
+print(lowest_name,lowest_marks)        
+
+print("\n-------Merge Two Dictionaries--------")
+
+week1_sales = {"mon": 100, "tue": 150, "wed": 200}
+week2_sales = {"wed": 250, "thu": 180, "fri": 220}
+
+combined_sales = {}
+
+for day, amount in week1_sales.items():
+    combined_sales[day] = amount
+
+for day, amount in week2_sales.items():
+    if day not in combined_sales:
+        combined_sales[day] = amount
+        print(f"{day} added fresh")
+    else:
+        combined_sales[day] = amount
+        print(f"{day} updated/overwritten")
+
+print(combined_sales)
+
+print("\n-------Nested Dictionary--------")
+
+students = {
+    "ali": {"math": 85, "science": 90},
+    "sara": {"math": 78, "science": 88}
+}
+
+for name, subjects in students.items():        # outer loop: goes through each student
+    print(f"Student: {name}")
+    for sub,marks in students.items():
+        print(sub,marks)
+
+print("\n-------Sort by Value--------")
+
+student_marks = {"ali": 85, "sara": 92, "ahmed": 78}
+
+# sorted() with key=lambda tells Python to sort based on the VALUE, not the key
+sorted_items = sorted(student_marks.items(), key=lambda pair: pair[1], reverse=True)
+
+for name, marks in sorted_items:      # now looping through an already-sorted list of pairs
+    print(f"{name}: {marks}")
+
+print("\n-------Filter Dictionary--------")
+
+student_marks = {"ali": 85, "sara": 92, "ahmed": 78, "hina": 95}
+passed_with_distinction = {}       # empty dictionary — will hold only filtered entries
+
+for name, marks in student_marks.items():
+    if marks >= 80:                 # logical condition — only keep entries matching this
+        passed_with_distinction[name] = marks
+
+print("Distinction holders:", passed_with_distinction)
+
+print("\n-------Compare Two Dictionaries--------")
+
+week1_sales = {"mon": 100, "tue": 150, "wed": 200}
+week2_sales = {"wed": 250, "thu": 180, "tue": 220}
+
+common_days = []      # empty list — will collect days present in BOTH dictionaries
+
+for day in week1_sales:                  # looping over week1's keys
+    if day in week2_sales:               # logical check: is this key also in week2?
+        common_days.append(day)
+
+print("Common days in both weeks:", common_days)
+
+# bonus: show the difference in sales for common days
+for day in common_days:
+    diff = week2_sales[day] - week1_sales[day]
+    print(f"{day}: week2 changed by {diff}")
+
+print("-------Invert Dictionary--------")
+
+student_marks = {"ali": 85, "sara": 92, "ahmed": 78}
+inverted = {}          # empty dictionary — will hold the flipped version
+
+for name, marks in student_marks.items():
+    inverted[marks] = name         # value becomes the new key, key becomes the new value
+
+print("Original:", student_marks)
+print("Inverted:", inverted)    
