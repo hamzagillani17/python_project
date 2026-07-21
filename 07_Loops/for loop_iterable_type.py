@@ -9,7 +9,6 @@ fruits = ["Mango", "Orange","Apple","Graps"]
 for fruit in fruits :
      print(fruit,"  Fruits ID",id(fruits))   # prints each element of the list one by one
 
-  
 
 print("\n----Find out Largest NUmber-----")
 
@@ -147,9 +146,7 @@ for name in names:
     if name == search:
         found = True
         break
-
 print(found)
-
 
 
 
@@ -505,4 +502,274 @@ for name, marks in student_marks.items():
 print("Original:", student_marks)
 print("Inverted:", inverted) 
 
+print("\n=====Range============")
 
+print("-----simple repeat----")
+
+for i in range(5):
+    print("this number repeat 5 time: ",i)  # i just counts 0 to 4, not used meaningfully
+
+print("\n-------Access by Index--------")
+
+furits = ["Mango", "Charry", "Orange", "Apple", "Banana"]
+for i in range(len(furits)):
+    print(f"Index {i}: {furits[i]}") 
+
+print("---")
+
+# cleaner way with enumerate
+for i, fruit in enumerate(fruits):     # gives index AND value directly, no need for fruits[i]
+    print(i, fruit)
+
+
+print("\n-------Reverse Counting (Countdown)--------")
+
+for i in range(20,-1,-1 ):
+    print(i, end=" ")  
+
+print("\n-------Reverse a List using range--------")
+
+furits = ["Mango", "Charry", "Orange", "Apple", "Banana"]
+for i in range(len(furits)-1,-1,-1):
+    print(furits[i],end=" ")
+
+print("\n-------Step Jump--------")
+
+numbers = [10, 20, 30, 40, 50, 60, 70, 80]    
+
+for i in range(0,len(numbers),2): # step=2 means skip every alternate index
+    print(i,numbers[i])
+
+print("\n-------Multiplication Table using step--------")
+
+num = 9
+
+for i in range(1,11):
+    print(f"{num} x {i} = {num*i}")
+
+
+print("-------Star Pattern--------")
+
+rows = 5
+
+for i in range(1, rows + 1):        # outer loop controls how many rows
+    for j in range(i):              # inner loop controls how many stars in THIS row
+        print("*", end="")          # end="" keeps printing on same line
+    print()                          # move to next line after inner loop finishes    
+
+print("\n-------Number Pattern--------")
+
+rows = 5
+for i in range(1, rows + 1):
+    for j in range(1, i + 1):       # j goes from 1 to i
+        print(j, end=" ")
+    print()
+
+print("\n=========Basic Tuple Access=======")
+
+student = ("Ali", 25, "Karachi")   # tuple with name, age, city
+
+for i in student:
+    print(i)
+
+print("\n-------Tuple with Index using range--------")
+
+student = ("Ali", 25, "Karachi")   # tuple with name, age, city
+
+for i in range(len(student)):
+    print(f"Index {i} : {student[i]}")
+
+print("\n-------Loop with Unpacking--------")
+
+student = [("Ali",95), ("Sara",89), ("Usman", 87),("Bilal", 75)]
+
+for name, marks in student:
+    print(f"{name} scored {marks}") 
+
+print("\n-------Sum of Tuple Numbers--------")
+
+number = (2,2,34,45,34,56,2)
+total = 0
+
+for add in number:
+    total += add    # keep adding each number to total
+print(total)
+
+print("\n-------Largest and Smallest in Tuple--------")
+
+numbers = (23, 5, 67, 12, 89, 3,99,54,2,1)
+print(numbers)
+largest_num = float('-inf')
+small_num = float('inf')
+
+for num in numbers:
+    if num > largest_num:
+        largest_num = num
+    if num < small_num:
+        small_num = num
+print("Largest:", largest_num)
+print("Smallest:", small_num)            
+
+print("\n-------Loop Through Nested Tuples--------")
+
+points = ((1, 2), (3, 4), (5, 6))    # tuple of tuples — like coordinate pairs
+
+for x, y in points:
+    #x,y = num1
+    print(f"X = {x} : Y = {y}")
+
+print("\n-------Count Even Numbers in Tuple--------")
+
+numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,12,13,23)
+
+even = 0
+odd = 0
+even_t = []
+odd_t = []
+
+for num in numbers:
+    if num %2 == 0:
+        even+=1
+        even_t.append(num)
+        
+       
+    if num % 2 == 1:
+        odd+=1
+        odd_t.append(num)
+
+print("Total even values: ",even_t,end="\n")
+print("Even number",even)
+print("Total odd values: ",odd_t,end="\n")
+print("odd number: ",odd)
+
+print("\n-------Find Common Items using For Loop--------")
+
+list_a = [1, 2, 3, 4, 5]
+list_b = [4, 5, 6, 7, 8]
+comen_list = []
+for list in list_a:
+    if list in list_b:
+        comen_list.append(list)
+print(comen_list)        
+
+
+print("\n============sets============================")
+
+
+numbers_sets = {1, 2, 2, 3, 4, 4, 4, 5, 1}
+print(numbers_sets)
+
+numbers_list = [1, 2, 2, 3, 4, 4, 4, 5, 1]
+sets_number = set(numbers_list)             #list convert into set with set() function
+print(sets_number,"types",type(sets_number))
+
+empty = {}
+print(empty, type(empty)) #empty {} considered as a dic
+
+fruits = {"apple", "banana"}
+fruits.add("cherry")          # ek item add karo
+print(fruits)                  # {'apple', 'banana', 'cherry'}
+
+fruits.remove("banana")        # specific item hatao
+print(fruits)                  # {'apple', 'cherry'}
+
+fruits.discard("mango")        # agar item maujood na ho toh error nahi dega (remove() error dega)
+
+print("------------Remove Duplicates using Set-------------\n")
+
+numbers_list = [1, 2, 2, 3, 4, 4, 4, 5, 1,7,9,9,7,7,6]
+sets_number = set(numbers_list)             #list convert into set with set() function
+
+for i in sets_number:
+    print(i,end=" ")
+
+print("Total unique numbers:",len(sets_number))
+
+print("\n-------Manually Build a Set using For Loop--------")
+numbers_list = [1, 2, 2, 3, 4, 4, 4, 5, 1]
+manual_set = set()      # start with an empty set
+
+for num in numbers_list:
+    if num not in manual_set:      # only add if not already present
+        manual_set.add(num)
+
+print("Manual unique set:", manual_set)
+
+print("\n-------Find Common Items (Intersection) using For Loop--------")
+
+list_a = {1, 2, 3, 4, 5}
+list_b = {4, 5, 6, 7, 8}
+
+set_b = set(list_b)
+comen_list = set()
+
+for list in list_a:
+    if list in list_b:
+        comen_list.add(list)
+print("commen items: ",comen_list)        
+
+print("-------Find Different Items (Difference) using For Loop--------")
+
+list_a = [1, 2, 3, 4, 5]
+list_b = [4, 5, 6, 7, 8]
+
+set_b = set(list_b)
+only_in_a = set()
+
+for item in list_a:
+    if item not in set_b:       # only keep items that do NOT exist in list_b
+        only_in_a.add(item)
+
+print("Only in list_a:", only_in_a)
+
+print("-------Common Characters Between Two Strings--------")
+
+word1 = "python"
+word2 = "typhoon"
+
+set1 = set(word1)      # unique characters of word1
+set2 = set(word2)      # unique characters of word2
+
+common_chars = set()
+
+for ch in set1:
+    if ch in set2:
+        common_chars.add(ch)
+
+print("Common characters:", common_chars)
+
+
+print("-------Count Unique Words--------")
+
+sentence = "the cat sat on the mat and the cat ran"
+words = sentence.split()      # split() breaks sentence into a list of words
+
+unique_words = set()
+
+for word in words:
+    unique_words.add(word)     # duplicates auto-skip because it's a set
+
+print("All words:", words)
+print("Unique words:", unique_words)
+print("Total unique words:", len(unique_words))
+
+print("-------Check if List has Duplicates--------")
+
+numbers = [1, 2, 3, 4, 2, 5]
+seen = set()          # keeps track of numbers we've already encountered
+has_duplicate = False
+
+for num in numbers:
+    if num in seen:              # if we've seen this number before
+        has_duplicate = True
+        break
+    seen.add(num)                 # otherwise, remember this number for next time
+
+print("Has duplicates:", has_duplicate)
+
+
+
+
+
+
+    
