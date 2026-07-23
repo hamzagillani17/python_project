@@ -1,4 +1,11 @@
 print("======if elif else=======")
+
+'''if elif else : It is used to execute a block of code based on multiple conditions.
+The syntax for if-elif-else statement is:  
+
+if nested condition1:
+    # block of code to be executed if condition1 is true'''
+
 amount = 2000
 print('Amount = ',amount)
 if amount > 10000:

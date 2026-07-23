@@ -61,6 +61,10 @@ bin_a = 0b1010 #10
 bin_to_hex = hex(0b1010) #0xa
 print("hex_value:", bin_to_hex, "type:", type(bin_to_hex))
 
+num_string = "A1"
+number = int(num_string, 16)
+print ("Hexadecimal:", num_string, "Integer:",number)
+
 print("\nBinary to decimal conversion using int() function")
 bin_a = 0b1010 #10
 bin_to_dec = int(0b1010) #10
