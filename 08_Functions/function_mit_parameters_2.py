@@ -34,5 +34,16 @@ show_all_items(vegetables)
 
 print("\n-------Function with Parameter + While Loop--------")
 
+def count_digit(number):
+    temp = number
+    count = 0
 
+    while temp > 0:
+        temp = temp // 10
+        count +=1
+    print(f"{number} has {count} Digits")   
+count_digit(23456789)
+count_digit(234576897654356789087654356789765467865436786455678964535678)
+count_digit(0)
+     
 
