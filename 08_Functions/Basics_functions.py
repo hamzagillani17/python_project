@@ -227,3 +227,96 @@ print(process_order(101, item="Laptop", discount=10))   # ✅ Sahi (item keyword
 #print(process_order(order_id=101, item="Laptop"))          # ❌ ERROR - order_id keyword se nahi de sakte
 
 
+print("\n----------------Variable Scope-----Local Scop---Global Scop----------")
+'''Scope The scope of a variable in Python is defined as the specific area or
+region where the variable is accessible to the user.
+The scope of a variable depends on where and how it is defined. '''
+
+print("----------global variables--------------")
+
+#global variables
+name = "Ali Murtaza"
+marks = 50
+def myfunction():
+   # accessing inside the function
+   print("name:", name)
+   print("marks:", marks)
+# function call   
+myfunction()
+
+x = 100    # ye GLOBAL scope mein hai - poore program mein dikhega
+def my_function():
+    y = 50    # ye LOCAL scope mein hai - sirf is function ke andar dikhega
+    print("Function ke andar x (global):", x)   # global 'x' ko function ke andar bhi access kar sakte hain
+    print("Function ke andar y (local):", y)
+
+my_function()
+print("Function ke bahar x (global):", x)
+#print("Function ke bahar y (local):", y)     # ❌ ERROR! - 'y' function ke bahar exist nahi karta
+
+
+
+counter = 0    # global variable
+def increase_counter():
+    global counter     # ye batata hai "main global wala 'counter' use/change karunga, naya local mat banao"
+    counter += 1
+
+increase_counter()
+increase_counter()
+print(counter)     # Output: 2 - global 'counter' actually change hua
+
+'''counter = 0
+def increase_counter_wrong():
+    counter += 1    # ❌ ERROR! - Python isay naya LOCAL variable samajhta hai, aur += se pehle uski value nahi milti
+
+increase_counter_wrong()'''
+
+print("\n---------Nonlocal Variables-------------")
+'''The Python variables that are not defined in either local or global scope are called nonlocal variables.
+They are used in nested functions."
+'''
+
+def yourfunction():
+   a = 5
+   b = 6 
+   # nested function
+   def myfunction():
+      # nonlocal function 
+      nonlocal a
+      nonlocal b
+      a = 10
+      b = 20 
+      print("variable a:", a)
+      print("variable b:", b)
+      return a+b
+
+   print (myfunction())
+yourfunction()
+
+print("\n-------------Lambda (Anonymous Function)------------")
+
+# Normal function
+def square(x):
+    return x * x
+
+# Same kaam, lambda se
+square_lambda = lambda x: x * x
+
+print(square(5))            # Output: 25
+print(square_lambda(5))      # Output: 25
+
+
+
+
+add = lambda a, b: a + b
+print(add(5, 10))    # Output: 15
+
+
+
+students = [("Ali", 85), ("Sara", 92), ("Ahmed", 78)]
+
+# List ko marks (doosra element) ke hisaab se sort karna
+sorted_students = sorted(students, key=lambda student: student[1])
+print(sorted_students)
+
+
