@@ -46,4 +46,28 @@ count_digit(23456789)
 count_digit(234576897654356789087654356789765467865436786455678964535678)
 count_digit(0)
      
+print("\n==========Multiple Parameters + Dictionary + Nested Logic (bigger revision)==========")
 
+print("-------Function with Multiple Parameters + Dictionary--------")
+
+def analyze_student(name, subjects, marks_list):     # three parameters
+    marks_dict = {}                                     # revising: empty dictionary
+
+    for i in range(len(subjects)):                        # revising: range() + indexing
+        marks_dict[subjects[i]] = marks_list[i]             # revising: building a dictionary
+
+    total = 0
+    for subject, marks in marks_dict.items():               # revising: dictionary .items()
+        total += marks
+        if marks >= 80:                                       # revising: if-else
+            print(f"{subject}: {marks} -> Excellent")
+        elif marks >= 50:
+            print(f"{subject}: {marks} -> Average")
+        else:
+            print(f"{subject}: {marks} -> Needs Improvement")
+
+    average = total / len(subjects)                          # revising: average calculation
+    print(f"{name}'s average: {average:.1f}\n")
+
+analyze_student("Ali", ["Math", "Science", "English"], [85, 60, 45])
+analyze_student("Sara", ["Math", "Science", "English"], [95, 88, 92])
