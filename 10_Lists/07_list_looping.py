@@ -1075,3 +1075,14 @@ for browser in browsers:
     for test in tests:
         runs.append(f"{test} on {browser}")
 print(len(runs), runs[0], "|", runs[-1])        # 6 login on chromium | search on firefox
+
+
+
+
+
+
+
+
+
+
+
