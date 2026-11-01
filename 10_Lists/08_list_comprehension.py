@@ -329,7 +329,7 @@ print(x)                                # outside (not changed)
 # Program 2: The variable does not exist after the comprehension
 try:
     [sq for sq in range(3)]
-    print(sq)
+    print(sq) # pyright: ignore[reportUndefinedVariable]
 except NameError as e:
     print("Error:", e)                  # name 'sq' is not defined
 
