@@ -1297,3 +1297,18 @@ print(len([n for row in names for n in row]))   # 4
 row_texts = ["Name\tEmail\tStatus", "Ali\tali@example.com\tActive"]
 cells = [text.split("\t") for text in row_texts]
 print(cells)                            # [['Name', 'Email', 'Status'], ['Ali', 'ali@example.com', 'Active']]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
