@@ -16,7 +16,6 @@ Notes before you run this file:
 4) Plain programs only, no functions.
 """
 
-
 # =====================================================
 # Concept 1: Overview, Adding vs Removing
 # =====================================================
